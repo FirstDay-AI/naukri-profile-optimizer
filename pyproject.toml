@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "naukri-profile-optimizer"
+version = "0.1.0"
+description = "Free, open-source Naukri profile checker and AI rewriter (bring your own API key)."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "FirstDay AI" }]
+keywords = ["naukri", "resume", "job search", "india", "ats", "profile"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=pypi"
+Source = "https://github.com/FirstDay-AI/naukri-profile-optimizer"
+
+[project.scripts]
+naukri-optimizer = "naukri_optimizer.cli:main"
+
+[tool.setuptools]
+packages = ["naukri_optimizer"]
+
+[tool.setuptools.package-data]
+naukri_optimizer = ["data/*.json", "data/*.txt"]

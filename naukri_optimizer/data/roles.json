@@ -1,0 +1,555 @@
+{
+  "version": 1,
+  "note": "Keywords use 'Display|alias|alias'. The first part is shown to users; all parts are matched case-insensitively on word boundaries. Add a role with a pull request.",
+  "roles": [
+    {
+      "id": "data-analyst",
+      "name": "Data Analyst",
+      "titles": [
+        "data analyst",
+        "business intelligence analyst",
+        "bi analyst",
+        "mis analyst",
+        "reporting analyst",
+        "analytics analyst"
+      ],
+      "core": [
+        "SQL",
+        "Excel",
+        "Power BI|powerbi",
+        "Tableau",
+        "Python",
+        "Data Visualization|data visualisation",
+        "Dashboards|dashboard",
+        "Data Analysis",
+        "Statistics",
+        "Advanced Excel"
+      ],
+      "extra": [
+        "Pandas",
+        "ETL",
+        "Google Analytics",
+        "Looker",
+        "DAX",
+        "VLOOKUP",
+        "Pivot Tables|pivot table",
+        "A/B Testing",
+        "BigQuery",
+        "Data Cleaning"
+      ]
+    },
+    {
+      "id": "data-scientist",
+      "name": "Data Scientist",
+      "titles": [
+        "data scientist",
+        "ml engineer",
+        "machine learning engineer",
+        "ai engineer"
+      ],
+      "core": [
+        "Python",
+        "Machine Learning",
+        "SQL",
+        "Statistics",
+        "Deep Learning",
+        "Pandas",
+        "Scikit-learn|sklearn",
+        "NLP",
+        "TensorFlow|PyTorch",
+        "Data Science"
+      ],
+      "extra": [
+        "LLM|LLMs",
+        "Generative AI|GenAI",
+        "Computer Vision",
+        "Spark|PySpark",
+        "AWS",
+        "Feature Engineering",
+        "Time Series",
+        "MLOps",
+        "NumPy",
+        "Hugging Face|huggingface"
+      ]
+    },
+    {
+      "id": "java-developer",
+      "name": "Java Developer",
+      "titles": [
+        "java developer",
+        "java engineer",
+        "java backend developer",
+        "backend developer",
+        "software engineer",
+        "software developer",
+        "sde"
+      ],
+      "core": [
+        "Java",
+        "Spring Boot|springboot",
+        "Microservices|microservice",
+        "REST API|REST APIs|RESTful",
+        "Hibernate|JPA",
+        "SQL",
+        "Spring",
+        "Git",
+        "Maven|Gradle",
+        "JUnit"
+      ],
+      "extra": [
+        "Kafka",
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "MySQL",
+        "PostgreSQL",
+        "Redis",
+        "Jenkins",
+        "Multithreading",
+        "Design Patterns"
+      ]
+    },
+    {
+      "id": "python-developer",
+      "name": "Python Developer",
+      "titles": [
+        "python developer",
+        "django developer",
+        "python engineer",
+        "backend developer",
+        "software engineer",
+        "software developer"
+      ],
+      "core": [
+        "Python",
+        "Django",
+        "Flask|FastAPI",
+        "REST API|REST APIs|RESTful",
+        "SQL",
+        "Git",
+        "PostgreSQL|MySQL",
+        "OOP|OOPS|object oriented programming",
+        "Linux",
+        "API Development"
+      ],
+      "extra": [
+        "Docker",
+        "AWS",
+        "Celery",
+        "Redis",
+        "Pandas",
+        "Pytest",
+        "Microservices",
+        "Kubernetes",
+        "MongoDB",
+        "CI/CD|CICD"
+      ]
+    },
+    {
+      "id": "full-stack-developer",
+      "name": "Full Stack Developer",
+      "titles": [
+        "full stack developer",
+        "fullstack developer",
+        "full stack engineer",
+        "mern stack developer",
+        "mern developer",
+        "web developer"
+      ],
+      "core": [
+        "JavaScript",
+        "React|React.js|ReactJS",
+        "Node.js|NodeJS|Node",
+        "HTML",
+        "CSS",
+        "REST API|REST APIs|RESTful",
+        "MongoDB",
+        "SQL",
+        "Git",
+        "Express|Express.js|ExpressJS"
+      ],
+      "extra": [
+        "TypeScript",
+        "Next.js|NextJS",
+        "Redux",
+        "Docker",
+        "AWS",
+        "Tailwind|Tailwind CSS",
+        "GraphQL",
+        "PostgreSQL",
+        "Jest",
+        "CI/CD|CICD"
+      ]
+    },
+    {
+      "id": "frontend-developer",
+      "name": "Frontend Developer",
+      "titles": [
+        "frontend developer",
+        "front end developer",
+        "front-end developer",
+        "react developer",
+        "ui developer",
+        "angular developer"
+      ],
+      "core": [
+        "JavaScript",
+        "React|React.js|ReactJS",
+        "HTML",
+        "CSS",
+        "TypeScript",
+        "Redux",
+        "Responsive Design",
+        "REST API|REST APIs",
+        "Git",
+        "Webpack|Vite"
+      ],
+      "extra": [
+        "Angular",
+        "Next.js|NextJS",
+        "Tailwind|Tailwind CSS",
+        "Jest",
+        "Figma",
+        "Web Performance",
+        "Accessibility",
+        "SASS|SCSS",
+        "Vue|Vue.js",
+        "Bootstrap"
+      ]
+    },
+    {
+      "id": "qa-engineer",
+      "name": "QA / Test Engineer",
+      "headline_name": "QA Engineer",
+      "titles": [
+        "qa engineer",
+        "test engineer",
+        "software tester",
+        "qa analyst",
+        "automation tester",
+        "sdet",
+        "quality assurance",
+        "manual tester"
+      ],
+      "core": [
+        "Manual Testing",
+        "Automation Testing",
+        "Selenium",
+        "Test Cases|test case",
+        "Regression Testing",
+        "API Testing",
+        "SQL",
+        "JIRA",
+        "Java|Python",
+        "TestNG|JUnit"
+      ],
+      "extra": [
+        "Postman",
+        "Rest Assured|RestAssured",
+        "Cucumber|BDD",
+        "Appium",
+        "Playwright",
+        "Cypress",
+        "Jenkins",
+        "Agile",
+        "STLC",
+        "JMeter|Performance Testing"
+      ]
+    },
+    {
+      "id": "devops-engineer",
+      "name": "DevOps Engineer",
+      "titles": [
+        "devops engineer",
+        "site reliability engineer",
+        "sre",
+        "cloud engineer",
+        "platform engineer"
+      ],
+      "core": [
+        "AWS",
+        "Docker",
+        "Kubernetes",
+        "CI/CD|CICD",
+        "Jenkins",
+        "Terraform",
+        "Linux",
+        "Git",
+        "Ansible",
+        "Monitoring"
+      ],
+      "extra": [
+        "Azure",
+        "GCP",
+        "Prometheus",
+        "Grafana",
+        "Helm",
+        "Python",
+        "Shell Scripting|Bash",
+        "GitHub Actions",
+        "EKS",
+        "Networking"
+      ]
+    },
+    {
+      "id": "business-analyst",
+      "name": "Business Analyst",
+      "titles": [
+        "business analyst",
+        "product analyst",
+        "functional analyst",
+        "it business analyst"
+      ],
+      "core": [
+        "Requirement Gathering|Requirements Gathering",
+        "BRD",
+        "User Stories",
+        "SQL",
+        "Excel",
+        "JIRA",
+        "Stakeholder Management",
+        "Process Mapping|Process Improvement",
+        "Agile",
+        "Documentation"
+      ],
+      "extra": [
+        "Power BI|powerbi",
+        "Tableau",
+        "FRD",
+        "UAT",
+        "Visio",
+        "Confluence",
+        "Gap Analysis",
+        "Scrum",
+        "Wireframes",
+        "Data Analysis"
+      ]
+    },
+    {
+      "id": "customer-success",
+      "name": "Customer Success Manager",
+      "titles": [
+        "customer success manager",
+        "customer success",
+        "account manager",
+        "client success manager",
+        "csm"
+      ],
+      "core": [
+        "Customer Success",
+        "Account Management",
+        "Onboarding",
+        "Customer Retention|Retention",
+        "Churn",
+        "Renewals|Renewal",
+        "Upselling|Upsell",
+        "CRM",
+        "Stakeholder Management",
+        "SaaS"
+      ],
+      "extra": [
+        "Salesforce",
+        "HubSpot",
+        "Gainsight",
+        "NPS",
+        "QBR|QBRs",
+        "Customer Experience",
+        "Escalation Management",
+        "Zendesk",
+        "Freshdesk",
+        "B2B"
+      ]
+    },
+    {
+      "id": "customer-support",
+      "name": "Customer Support",
+      "headline_name": "Customer Support Executive",
+      "titles": [
+        "customer support",
+        "customer service",
+        "customer care",
+        "technical support",
+        "support executive",
+        "process associate",
+        "customer support executive"
+      ],
+      "core": [
+        "Customer Support|Customer Service",
+        "Voice Process|Voice",
+        "Non-Voice|Chat Support|Chat Process",
+        "Email Support",
+        "CRM",
+        "Escalation Handling|Escalations",
+        "Ticketing Tools|Ticketing",
+        "Troubleshooting",
+        "SLA",
+        "CSAT|Customer Satisfaction"
+      ],
+      "extra": [
+        "Zendesk",
+        "Freshdesk",
+        "Salesforce",
+        "International Voice Process|International BPO",
+        "Inbound",
+        "Outbound",
+        "AHT",
+        "Quality Audit|Quality",
+        "English Communication",
+        "Rotational Shifts|Night Shift"
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "Sales / Business Development",
+      "headline_name": "Business Development Executive",
+      "titles": [
+        "sales executive",
+        "business development executive",
+        "business development manager",
+        "business development",
+        "bde",
+        "inside sales",
+        "sales manager",
+        "account executive"
+      ],
+      "core": [
+        "B2B Sales|B2B",
+        "Lead Generation",
+        "Cold Calling",
+        "CRM",
+        "Sales Pipeline|Pipeline",
+        "Negotiation",
+        "Client Acquisition",
+        "Target Achievement|Targets",
+        "Inside Sales",
+        "Revenue"
+      ],
+      "extra": [
+        "Salesforce",
+        "HubSpot",
+        "Zoho CRM",
+        "B2C",
+        "Field Sales",
+        "Key Account Management",
+        "Channel Sales",
+        "SaaS Sales",
+        "Prospecting",
+        "Closing"
+      ]
+    },
+    {
+      "id": "hr-recruiter",
+      "name": "HR / Recruiter",
+      "headline_name": "HR Recruiter",
+      "titles": [
+        "hr recruiter",
+        "recruiter",
+        "talent acquisition",
+        "hr executive",
+        "technical recruiter",
+        "hr generalist",
+        "it recruiter"
+      ],
+      "core": [
+        "Recruitment",
+        "Talent Acquisition",
+        "Sourcing",
+        "Screening",
+        "Naukri",
+        "LinkedIn Recruiter|LinkedIn",
+        "Onboarding",
+        "Interview Scheduling|Interview Coordination",
+        "End-to-End Recruitment|End to End Recruitment",
+        "Stakeholder Management"
+      ],
+      "extra": [
+        "IT Recruitment",
+        "Non-IT Recruitment",
+        "Boolean Search",
+        "ATS",
+        "Employer Branding",
+        "HRMS",
+        "Payroll",
+        "Bulk Hiring|Volume Hiring",
+        "Offer Negotiation",
+        "Campus Hiring"
+      ]
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Digital Marketing",
+      "titles": [
+        "digital marketing",
+        "digital marketer",
+        "performance marketer",
+        "performance marketing",
+        "seo executive",
+        "seo specialist",
+        "marketing executive",
+        "growth marketer"
+      ],
+      "core": [
+        "SEO",
+        "SEM",
+        "Google Ads",
+        "Meta Ads|Facebook Ads",
+        "Social Media Marketing|SMM",
+        "Google Analytics|GA4",
+        "Content Marketing",
+        "Email Marketing",
+        "Performance Marketing",
+        "Lead Generation"
+      ],
+      "extra": [
+        "Keyword Research",
+        "Canva",
+        "WordPress",
+        "HubSpot",
+        "ROAS",
+        "CTR",
+        "Conversion Rate Optimization|CRO",
+        "Search Console",
+        "Marketing Automation",
+        "Copywriting"
+      ]
+    },
+    {
+      "id": "finance-accounts",
+      "name": "Finance / Accounts",
+      "headline_name": "Accounts Executive",
+      "titles": [
+        "accountant",
+        "accounts executive",
+        "finance executive",
+        "financial analyst",
+        "finance analyst",
+        "accounts payable",
+        "accounts receivable"
+      ],
+      "core": [
+        "Tally|Tally Prime|Tally ERP",
+        "GST",
+        "TDS",
+        "Accounts Payable",
+        "Accounts Receivable",
+        "Bank Reconciliation|Reconciliation",
+        "Financial Reporting",
+        "Advanced Excel|Excel",
+        "Taxation",
+        "MIS Reporting|MIS"
+      ],
+      "extra": [
+        "SAP FICO|SAP",
+        "Zoho Books",
+        "Balance Sheet",
+        "Audit",
+        "Income Tax",
+        "Budgeting",
+        "Forecasting",
+        "Financial Modelling|Financial Modeling",
+        "Ind AS|IFRS",
+        "QuickBooks"
+      ]
+    }
+  ]
+}

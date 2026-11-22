@@ -1,0 +1,14 @@
+{
+  "target_role": "data-analyst",
+  "headline": "Data Analyst | 3+ Years | SQL, Power BI, Python, Advanced Excel | Built 25+ dashboards that cut weekly reporting time 40% | Immediate Joiner",
+  "key_skills": ["SQL", "Power BI", "Python", "Pandas", "Advanced Excel", "Excel", "Tableau", "Data Visualization", "Dashboards", "Data Analysis", "Statistics", "DAX", "Pivot Tables", "ETL", "Data Cleaning"],
+  "summary": "Data Analyst with 3+ years of experience turning logistics data into decisions. At ABC Logistics I built 25+ Power BI dashboards on SQL data that cut weekly reporting time by 40% for a 60-person operations team. I clean and model data with Python and Pandas, write complex SQL, and use statistics and DAX to explain why numbers moved. Looking for Data Analyst roles in Chennai or Bengaluru, or remote.",
+  "current_designation": "MIS Executive (Data Analysis)",
+  "current_company": "ABC Logistics",
+  "years_experience": 3,
+  "last_updated_days": 2,
+  "notice_period_days": 15,
+  "preferred_locations": ["Chennai", "Bengaluru", "Remote"],
+  "expected_salary": "9 LPA",
+  "resume_attached": true
+}
