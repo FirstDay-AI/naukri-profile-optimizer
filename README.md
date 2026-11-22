@@ -1,15 +1,29 @@
-# Naukri Profile Optimizer
+<h1 align="center">Naukri Profile Optimizer</h1>
 
-**Find out why recruiters skip your Naukri profile — and fix it in 2 minutes. Free, open source, runs on your machine.**
-
-[![tests](https://github.com/FirstDay-AI/naukri-profile-optimizer/actions/workflows/tests.yml/badge.svg)](https://github.com/FirstDay-AI/naukri-profile-optimizer/actions/workflows/tests.yml)
-[![Licence: MIT](https://img.shields.io/badge/licence-MIT-142724.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-1959eb.svg)](pyproject.toml)
-[![Try it free online](https://img.shields.io/badge/try%20it-free%20online-dcf881.svg?labelColor=142724)](https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=github&utm_medium=readme_badge&utm_campaign=naukri_optimizer)
+<p align="center"><b>Free Naukri profile score checker and AI rewriter for job seekers in India.</b><br>
+Find out why recruiters skip your Naukri profile, and fix it in 2 minutes. Open source, runs on your machine.</p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/FirstDay-AI/naukri-profile-optimizer/main/docs/demo.png" alt="naukri-optimizer check scoring a sample Data Analyst profile 17 out of 100, with section bars and a list of fixes ordered by points lost" width="820">
+<a href="https://github.com/FirstDay-AI/naukri-profile-optimizer/actions/workflows/tests.yml"><img src="https://github.com/FirstDay-AI/naukri-profile-optimizer/actions/workflows/tests.yml/badge.svg" alt="tests"></a>
+<a href="https://github.com/FirstDay-AI/naukri-profile-optimizer/releases/latest"><img src="https://img.shields.io/github/v/release/FirstDay-AI/naukri-profile-optimizer?color=1959eb&label=release" alt="Latest release"></a>
+<a href="https://github.com/FirstDay-AI/naukri-profile-optimizer/stargazers"><img src="https://img.shields.io/github/stars/FirstDay-AI/naukri-profile-optimizer?style=flat&color=dcf881&labelColor=142724" alt="GitHub stars"></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/licence-MIT-142724.svg" alt="Licence: MIT"></a>
+<a href="pyproject.toml"><img src="https://img.shields.io/badge/python-3.9%2B-1959eb.svg" alt="Python 3.9+"></a>
+<a href="https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=github&utm_medium=readme_badge&utm_campaign=naukri_optimizer"><img src="https://img.shields.io/badge/try%20it-free%20online-dcf881.svg?labelColor=142724" alt="Try it free online"></a>
 </p>
+
+<p align="center">
+<a href="https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=github&utm_medium=readme_hero&utm_campaign=naukri_optimizer"><b>Try it online, no install</b></a> ·
+<a href="#quickstart-30-seconds"><b>Run it locally</b></a> ·
+<a href="#compared-with-paid-tools"><b>vs paid tools</b></a> ·
+<a href="#free-tool-or-done-for-you"><b>Get interviews, not just a score</b></a>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/FirstDay-AI/naukri-profile-optimizer/main/docs/demo.gif" alt="Animated demo: naukri-optimizer check scores a sample Data Analyst profile 17 out of 100 with a list of fixes, then scores the fixed profile 100 out of 100" width="820">
+</p>
+
+> ⭐ **If this helps you, star the repo.** Stars are how other job seekers find it.
 
 Recruiters on Naukri find candidates by searching keywords, then filtering by location, notice period, salary and how recently a profile was active. If your profile doesn't use the words they search for, you don't show up, however good you are.
 
@@ -19,6 +33,27 @@ This tool scores your profile out of 100 against what recruiters search for in y
 - **Built for Naukri and Indian roles.** 15 roles with recruiter keywords, in an open JSON file.
 - **AI rewrite with your own key.** OpenAI, Anthropic, any OpenAI-compatible API, or a local Ollama model.
 - **Private.** Your profile stays on your machine.
+
+**Who it's for:** working professionals in India looking for their next role on Naukri: developers, analysts, QA, DevOps, sales, HR, marketing, finance and support, from about 1 to 15 years of experience. Freshers can use it too, but the score rewards results and experience you may not have yet.
+
+<details>
+<summary><b>Contents</b></summary>
+
+- [Quickstart](#quickstart-30-seconds)
+- [Sample output](#sample-output)
+- [How the score works](#how-the-score-works)
+- [AI rewrite with your own key](#ai-rewrite-with-your-own-key)
+- [Compared with paid tools](#compared-with-paid-tools)
+- [Where it falls short](#where-it-falls-short)
+- [Free tool or done for you](#free-tool-or-done-for-you)
+- [Roles supported](#roles-supported)
+- [Privacy](#privacy)
+- [Use it in your own app](#use-it-in-your-own-app)
+- [FAQ](#faq)
+- [Contributing](#contributing)
+- [Star history](#star-history)
+
+</details>
 
 ## Quickstart (30 seconds)
 
@@ -151,11 +186,45 @@ naukri-optimizer rewrite profile.json --provider ollama --model llama3.1
 
 Flags win over environment variables. On Windows PowerShell, set a variable with `$env:OPENAI_API_KEY="sk-..."`.
 
-## Don't want to install anything?
+## Compared with paid tools
 
-Use the free hosted version (no key needed): **[firstdayai.in/tools/naukri-profile-optimiser](https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=github&utm_medium=readme&utm_campaign=naukri_optimizer)**
+Most resume checkers are built for US-style resumes and job descriptions. Naukri profiles are different: recruiters search the headline and key skills, then filter on notice period, location, salary and recent activity. Here is how this tool compares with the common alternatives.
 
-It runs the same scoring rules in your browser. It also has the AI rewrite without an API key; for that it asks for your name and WhatsApp number.
+| | **This tool** | Naukri FastForward | Jobscan | Resume Worded | Asking ChatGPT |
+| --- | --- | --- | --- | --- | --- |
+| Price | **Free** (MIT) | Paid add-ons | 5 free scans a month, then $49.95/month | Free scan, Pro $49/month or $229/year | Free or paid plan |
+| What it checks | Your **Naukri profile**: headline, key skills, summary, notice period, salary, activity | Resume writing and paid visibility on Naukri | Resume against one job description | Resume and LinkedIn profile | Whatever you paste and ask |
+| Indian role keywords | ✅ 15 roles, open JSON | ✅ | ❌ | ❌ | Depends on the prompt |
+| Rules you can read | ✅ | ❌ | ❌ | ❌ | ❌ |
+| Runs on your machine | ✅ | ❌ | ❌ | ❌ | ❌ |
+| No account needed | ✅ | ❌ | ❌ | ❌ | Optional |
+| AI rewrite | ✅ with your own key, or local Ollama | Human writers (paid) | ✅ (paid) | ✅ (paid) | ✅ |
+
+Prices are from public pricing pages and reviews, checked November 2026; check each vendor for current prices. Naukri FastForward and Resume Display are Naukri's own paid services and are the only ones here that change how prominently Naukri shows your profile. This tool does not.
+
+## Where it falls short
+
+- **The score is ours, not Naukri's.** Nobody outside Naukri knows exactly how its search ranks profiles. The rules encode what recruiters can see and filter on.
+- **You paste your profile in.** The command-line tool doesn't read your resume PDF or log in to Naukri. (The [hosted version](https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=github&utm_medium=readme_limits&utm_campaign=naukri_optimizer) reads your resume in your browser.)
+- **15 roles so far.** Other roles fall back to generic checks. [Add yours](docs/adding-a-role.md).
+- **A better profile gets you found, not hired.** You still have to apply, follow up and interview.
+
+## Free tool or done for you
+
+| | **This repo** | **Free online version** | **FirstDay AI plans** |
+| --- | --- | --- | --- |
+| Price | Free | Free | From ₹5,999/month |
+| Naukri profile score and fixes | ✅ | ✅ | ✅ |
+| AI rewrite of headline, summary and skills | ✅ with your own key | ✅ no key needed | ✅ written by our team |
+| Reads your resume | ❌ | ✅ in your browser | ✅ |
+| ATS resumes written for your target roles | ❌ | ❌ | ✅ |
+| Naukri, Indeed and LinkedIn profiles optimised for you | ❌ | ❌ | ✅ |
+| Applications sent and interviews coordinated for you | ❌ | ❌ | ✅ Elite plan |
+| | [Quickstart](#quickstart-30-seconds) | [**Try it online**](https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=github&utm_medium=readme&utm_campaign=naukri_optimizer) | [**See plans**](https://firstdayai.in/?utm_source=github&utm_medium=readme_tiers&utm_campaign=naukri_optimizer#pricing) |
+
+The free online version runs the same scoring rules in your browser. For the AI rewrite without an API key it asks for your name and WhatsApp number.
+
+FirstDay AI is a managed job-search service in India. The Job Search plan (₹5,999/month) includes 5 ATS-optimised resumes, Naukri and Indeed profile optimisation and monthly profile upkeep. The Co-Pilot plan (₹24,999 once) adds lifetime interview assistance with LinkedIn and Naukri optimisation. The Elite plan (₹59,999 for 12 months) adds targeted applications sent for you and referrals. Plan details: [firstdayai.in](https://firstdayai.in/?utm_source=github&utm_medium=readme_plans&utm_campaign=naukri_optimizer#pricing).
 
 ## Roles supported
 
@@ -219,9 +288,13 @@ python -m unittest discover -s tests    # or: python -m pytest
 
 FirstDay AI's team applies to jobs for you. We write your resume and optimise your profiles for your target roles, apply across 15+ job portals, follow up with HR teams and coordinate your interviews. If you'd rather spend your time preparing than applying, [see how it works](https://firstdayai.in/?utm_source=github&utm_medium=readme&utm_campaign=naukri_optimizer&utm_content=closing) or [book a strategy call](https://firstdayai.in/?utm_source=github&utm_medium=readme_cta&utm_campaign=naukri_optimizer).
 
-## If this helped
+## Star history
 
-Please **star the repo**. Stars help other job seekers find it. Found a wrong keyword or a missing role? [Open an issue](https://github.com/FirstDay-AI/naukri-profile-optimizer/issues).
+If this helped, please **star the repo**: it helps other job seekers find it. Found a wrong keyword or a missing role? [Open an issue](https://github.com/FirstDay-AI/naukri-profile-optimizer/issues).
+
+<a href="https://star-history.com/#FirstDay-AI/naukri-profile-optimizer&Date">
+  <img src="https://api.star-history.com/svg?repos=FirstDay-AI/naukri-profile-optimizer&type=Date" alt="Star history chart" width="600">
+</a>
 
 ---
 

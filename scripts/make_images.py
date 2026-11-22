@@ -6,7 +6,8 @@ Usage (from the repo root, needs Pillow):
 
 The demo image is a real `naukri-optimizer check` run on
 examples/data_analyst_before.json, so re-run this after changing the rules.
-Writes docs/demo.png and docs/social-preview.png.
+Writes docs/demo.png, docs/demo.gif (before and after, animated) and
+docs/social-preview.png.
 """
 
 import subprocess
@@ -19,6 +20,7 @@ from PIL import Image, ImageDraw, ImageFont
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 SAMPLE = "examples/data_analyst_before.json"
+AFTER = "examples/data_analyst_after.json"
 
 # FirstDay AI brand colours
 PAPER, INK, LIME, COBALT = "#f5f5f0", "#142724", "#dcf881", "#1959eb"
@@ -46,8 +48,8 @@ def sans(size, weight="Regular"):
                  "DejaVuSans-Bold.ttf" if weight == "Bold" else "DejaVuSans.ttf"], size)
 
 
-def run_check():
-    out = subprocess.run([sys.executable, "-m", "naukri_optimizer", "check", SAMPLE],
+def run_check(sample=SAMPLE):
+    out = subprocess.run([sys.executable, "-m", "naukri_optimizer", "check", sample],
                          cwd=ROOT, capture_output=True, text=True, check=True).stdout
     return out.strip("\n").splitlines()
 
@@ -79,15 +81,13 @@ def demo_lines(raw, max_fixes=6, width=92):
     return lines
 
 
-def render_demo(path):
-    raw = run_check()
-    lines = demo_lines(raw)
-    s = 2  # draw at 2x for sharp text on high-density screens
+def draw_terminal(cmd, lines, s=2, rows=None, typed=None, cursor=False):
+    """Draw a terminal window showing `$ cmd` and its output lines."""
     f, fb = mono(15 * s), mono(15 * s, bold=True)
     lh, pad, bar_h = 22 * s, 28 * s, 34 * s
     cw = f.getlength("M")
     w = int(pad * 2 + cw * 96)
-    h = int(bar_h + pad * 2 + lh * (len(lines) + 2))
+    h = int(bar_h + pad * 2 + lh * ((rows or len(lines)) + 2))
     img = Image.new("RGB", (w, h), INK)
     d = ImageDraw.Draw(img)
 
@@ -100,8 +100,12 @@ def render_demo(path):
            font=sans(13 * s), anchor="lm")
 
     y = bar_h + pad
+    shown = cmd if typed is None else cmd[:typed]
     d.text((pad, y), "$ ", fill=LIME, font=fb)
-    d.text((pad + cw * 2, y), f"naukri-optimizer check {SAMPLE}", fill=PAPER, font=fb)
+    d.text((pad + cw * 2, y), shown, fill=PAPER, font=fb)
+    if cursor:
+        cx = pad + cw * (2 + len(shown))
+        d.rectangle([cx, y + 2 * s, cx + cw, y + lh - 4 * s], fill=LIME)
     y += lh * 2
 
     for kind, line in lines:
@@ -129,8 +133,39 @@ def render_demo(path):
         else:
             d.text((x, y), line, fill=PAPER, font=f)
         y += lh
+    return img
+
+
+def render_demo(path):
+    raw = run_check()
+    img = draw_terminal(f"naukri-optimizer check {SAMPLE}", demo_lines(raw))
     img.save(path, optimize=True)
     return raw
+
+
+def render_gif(path):
+    """Before and after: type the command, show the score, then the fixed profile."""
+    runs = []
+    for sample in (SAMPLE, AFTER):
+        lines = demo_lines(run_check(sample), max_fixes=4)
+        runs.append((f"naukri-optimizer check {sample}", lines))
+    rows = max(len(l) for _, l in runs)
+    frames, durations = [], []
+
+    def add(img, ms):
+        frames.append(img.convert("P", palette=Image.ADAPTIVE, colors=64))
+        durations.append(ms)
+
+    for cmd, lines in runs:
+        add(draw_terminal(cmd, [], s=1, rows=rows, typed=0, cursor=True), 500)
+        for n in range(4, len(cmd) + 1, 4):
+            add(draw_terminal(cmd, [], s=1, rows=rows, typed=n, cursor=True), 45)
+        add(draw_terminal(cmd, [], s=1, rows=rows, cursor=True), 300)
+        for k in range(2, len(lines) + 1, 2):
+            add(draw_terminal(cmd, lines[:k], s=1, rows=rows), 70)
+        add(draw_terminal(cmd, lines, s=1, rows=rows), 3800)
+    frames[0].save(path, save_all=True, append_images=frames[1:], duration=durations,
+                   loop=0, optimize=True, disposal=1)
 
 
 def render_social(path, raw):
@@ -181,8 +216,9 @@ def render_social(path, raw):
 def main():
     DOCS.mkdir(exist_ok=True)
     raw = render_demo(DOCS / "demo.png")
+    render_gif(DOCS / "demo.gif")
     render_social(DOCS / "social-preview.png", raw)
-    print("Wrote docs/demo.png and docs/social-preview.png")
+    print("Wrote docs/demo.png, docs/demo.gif and docs/social-preview.png")
 
 
 if __name__ == "__main__":
