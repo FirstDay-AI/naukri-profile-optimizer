@@ -222,7 +222,7 @@ Prices are from public pricing pages and reviews, checked November 2026; check e
 | Applications sent and interviews coordinated for you | ❌ | ❌ | ✅ Elite plan |
 | | [Quickstart](#quickstart-30-seconds) | [**Try it online**](https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=github&utm_medium=readme&utm_campaign=naukri_optimizer) | [**See plans**](https://firstdayai.in/?utm_source=github&utm_medium=readme_tiers&utm_campaign=naukri_optimizer#pricing) |
 
-The free online version runs the same scoring rules in your browser. For the AI rewrite without an API key it asks for your name and WhatsApp number.
+The free online version runs the same scoring rules in your browser. When you score an uploaded resume there, FirstDay AI saves the name, email and phone number on it with your score, to send you the report and follow up; the page says so next to the score button. This command-line tool sends nothing anywhere.
 
 FirstDay AI is a managed job-search service in India. The Job Search plan (₹5,999/month) includes 5 ATS-optimised resumes, Naukri and Indeed profile optimisation and monthly profile upkeep. The Co-Pilot plan (₹24,999 once) adds lifetime interview assistance with LinkedIn and Naukri optimisation. The Elite plan (₹59,999 for 12 months) adds targeted applications sent for you and referrals. Plan details: [firstdayai.in](https://firstdayai.in/?utm_source=github&utm_medium=readme_plans&utm_campaign=naukri_optimizer#pricing).
 
