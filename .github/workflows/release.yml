@@ -66,6 +66,10 @@ jobs:
           if [ ! -s release-notes.md ]; then
             echo "See CHANGELOG.md." > release-notes.md
           fi
+          {
+            echo
+            echo "Prefer not to install anything? The hosted version runs in your browser: https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=github&utm_medium=release&utm_campaign=naukri_optimizer"
+          } >> release-notes.md
       - uses: softprops/action-gh-release@v2
         with:
           name: ${{ github.ref_name }}
