@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest a new check, command or improvement.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Tell us what you were trying to do.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence (for new scoring rules)
+      description: If you're suggesting a scoring rule, how do you know recruiters care about it? Links, job posts or recruiter experience all help.
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Anything else you considered?

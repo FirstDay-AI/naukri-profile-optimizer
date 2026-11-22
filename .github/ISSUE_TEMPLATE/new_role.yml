@@ -1,0 +1,42 @@
+name: New role request
+description: Ask for a target role that isn't supported yet, or better keywords for one that is.
+labels: ["role"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Adding a role is a single edit to `naukri_optimizer/data/roles.json`. See [docs/adding-a-role.md](https://github.com/FirstDay-AI/naukri-profile-optimizer/blob/main/docs/adding-a-role.md). A pull request is the fastest way, but a request with good keywords helps too.
+  - type: input
+    id: role
+    attributes:
+      label: Role name
+      placeholder: "SAP FICO Consultant"
+    validations:
+      required: true
+  - type: textarea
+    id: titles
+    attributes:
+      label: Job titles recruiters use for this role
+      placeholder: "sap fico consultant, sap fi consultant, sap finance consultant"
+    validations:
+      required: true
+  - type: textarea
+    id: skills
+    attributes:
+      label: Skills recruiters search for
+      description: The 10 most important first, then up to 10 more that help.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Two or three real job descriptions
+      description: Links to Naukri or other job posts the keywords came from.
+    validations:
+      required: true
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Contribution
+      options:
+        - label: I'd like to open the pull request myself.
