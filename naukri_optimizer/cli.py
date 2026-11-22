@@ -71,7 +71,7 @@ def load_profile(path):
         sys.exit(f"{path} is not valid JSON: {e}")
 
 
-def main(argv=None):
+def build_parser():
     p = argparse.ArgumentParser(prog="naukri-optimizer",
                                 description="Score and rewrite your Naukri profile.")
     p.add_argument("--version", action="version", version=__version__)
@@ -92,8 +92,11 @@ def main(argv=None):
     s.add_argument("--model", help="model name (or set NAUKRI_AI_MODEL)")
     s.add_argument("--base-url", help="OpenAI-compatible base URL, e.g. Groq or OpenRouter")
     s.add_argument("--json", action="store_true", help="print raw JSON")
+    return p
 
-    a = p.parse_args(argv)
+
+def main(argv=None):
+    a = build_parser().parse_args(argv)
 
     if a.cmd == "init":
         if Path(a.path).exists():
