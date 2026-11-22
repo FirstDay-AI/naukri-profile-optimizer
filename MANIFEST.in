@@ -1,0 +1,5 @@
+include LICENSE README.md CHANGELOG.md
+recursive-include naukri_optimizer/data *.json *.txt
+recursive-include examples *.json
+recursive-include js *.js
+recursive-include tests *.py

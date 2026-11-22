@@ -1,27 +1,40 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "naukri-profile-optimizer"
 version = "0.1.0"
-description = "Free, open-source Naukri profile checker and AI rewriter (bring your own API key)."
+description = "Find out why recruiters skip your Naukri profile and fix it. Free, open-source scorer and bring-your-own-key AI rewrite."
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.9"
-authors = [{ name = "FirstDay AI" }]
-keywords = ["naukri", "resume", "job search", "india", "ats", "profile"]
+authors = [{ name = "FirstDay AI", email = "team@firstdayai.in" }]
+keywords = ["naukri", "resume", "job search", "india", "ats", "profile", "career", "llm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Office/Business",
+    "Topic :: Utilities",
+]
 dependencies = []
 
 [project.urls]
-Homepage = "https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=pypi"
+Homepage = "https://firstdayai.in/tools/naukri-profile-optimiser?utm_source=pypi&utm_medium=package&utm_campaign=naukri_optimizer"
 Source = "https://github.com/FirstDay-AI/naukri-profile-optimizer"
+Issues = "https://github.com/FirstDay-AI/naukri-profile-optimizer/issues"
+Changelog = "https://github.com/FirstDay-AI/naukri-profile-optimizer/blob/main/CHANGELOG.md"
 
 [project.scripts]
 naukri-optimizer = "naukri_optimizer.cli:main"
 
 [tool.setuptools]
-packages = ["naukri_optimizer"]
+packages = ["naukri_optimizer", "naukri_optimizer.data"]
 
 [tool.setuptools.package-data]
-naukri_optimizer = ["data/*.json", "data/*.txt"]
+"naukri_optimizer.data" = ["*.json", "*.txt"]
